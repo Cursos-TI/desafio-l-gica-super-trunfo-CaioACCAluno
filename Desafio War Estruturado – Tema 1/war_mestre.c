@@ -41,7 +41,7 @@ int TOTAL_MISSOES = 3;
 // =================================================================
 
 /**
- * @brief Sorteia e copia uma missao para o espaco alocado do jogador.
+ * Sorteia e copia uma missao para o espaco alocado do jogador.
  */
 void atribuirMissao(char* destino, char* missoes[], int totalMissoes) {
     int indice_sorteado = rand() % totalMissoes;
@@ -52,7 +52,7 @@ void atribuirMissao(char* destino, char* missoes[], int totalMissoes) {
 }
 
 /**
- * @brief Avalia se a missao do jogador foi cumprida utilizando logica baseada
+ * Avalia se a missao do jogador foi cumprida utilizando logica baseada
  * na string da missao e no estado atual do mapa.
  */
 int verificarMissao(char* missao, struct Territorio* mapa, int tamanho, char* cor_jogador) {
@@ -100,7 +100,7 @@ int verificarMissao(char* missao, struct Territorio* mapa, int tamanho, char* co
 }
 
 /**
- * @brief Exibe a missao do jogador. (Requisito: Passada por valor para exibicao).
+ * Exibe a missao do jogador. (Requisito: Passada por valor para exibicao).
  */
 void exibirMissao(char* missao, int id_jogador, char* cor) {
     printf("\nMISSAO DO JOGADOR %d (%s):\n", id_jogador, cor);
@@ -117,7 +117,7 @@ int rola_dado() {
 }
 
 /**
- * @brief Libera toda a memoria alocada dinamicamente.
+ * Libera toda a memoria alocada dinamicamente.
  */
 void liberarMemoria(struct Territorio* mapa, struct Jogador* jogadores) {
     if (mapa != NULL) {
@@ -136,7 +136,7 @@ void liberarMemoria(struct Territorio* mapa, struct Jogador* jogadores) {
 }
 
 /**
- * @brief Exibe o estado atual de todos os territorios. (exibirMapa)
+ * Exibe o estado atual de todos os territorios. (exibirMapa)
  */
 void exibir_territorios(struct Territorio* mapa, int total_territorios) {
     if (mapa == NULL || total_territorios <= 0) {
@@ -157,7 +157,7 @@ void exibir_territorios(struct Territorio* mapa, int total_territorios) {
 }
 
 /**
- * @brief Simula uma batalha entre dois territorios. (atacar)
+ * Simula uma batalha entre dois territorios. (atacar)
  */
 void atacar(struct Territorio* atacante, struct Territorio* defensor, int id_ataque, int id_defesa) {
     if (atacante->tropas <= 1) {
@@ -196,7 +196,7 @@ void atacar(struct Territorio* atacante, struct Territorio* defensor, int id_ata
 }
 
 /**
- * @brief Gerencia a alocacao dinamica e o cadastro de territorios.
+ * Gerencia a alocacao dinamica e o cadastro de territorios.
  */
 struct Territorio* cadastrar_territorios(int num_territorios, struct Jogador* jogadores) {
     // Alocacao de territorios (Requisito: calloc)
@@ -234,10 +234,6 @@ struct Territorio* cadastrar_territorios(int num_territorios, struct Jogador* jo
     printf("\nCadastro concluido.\n");
     return mapa;
 }
-
-// =================================================================
-// FUNCAO PRINCIPAL (main)
-// =================================================================
 
 int main() {
     // Requisito: usar srand(time(NULL))
